@@ -24,8 +24,8 @@ export default function Navbar() {
 
     return (
 
-        <header className="header" id="header">
-            <nav className="nav container">
+        <header className="header font-semibold" id="header">
+            <nav className="nav container px-1">
                 <a href="#" className="nav_logo">Fahmi Andriana</a>
                 <div className="nav_menu" id="nav-menu">
                     <ul className="nav_list grid">

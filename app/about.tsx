@@ -9,10 +9,11 @@ export default function About() {
         <span className="section_subtitle">My Introduction</span>
 
         <div className="about_container container grid">
-            <Image src={PasFoto} alt='' className="about_img" />
+{/* Suggested code may be subject to a license. Learn more: ~LicenseLog:2518941090. */}
+            <div className='flex items-center justify-center'><Image src={PasFoto} alt='' className="about_img" /></div>
 
-            <div className="about_data">
-                <p className="about_description" >Saya adalah seorang pekerja yang memiliki pengalaman di bidang administrasi dan marketing. Bergelar sarjana S1 di bidang Pendidikan, sempat berprofesi menjadi seorang guru dan sekarang saya mencoba memulai karir di dunia IT dengan mengikuti Bootcamp FullStack Developer</p>
+            <div className="about_data p-4">
+                <p className="about_description text-justify" >I am a professional with a background in teaching and a bachelor's degree in Education. I started my career as a teacher before deciding to pursue my interest in information technology. Currently, I have experience as a fullstack developer with expertise in developing mobile and web applications using React.js for frontend and Express.js for backend. Additionally, I have skills in developing mobile applications using Flutter. I am dedicated to creating innovative and user-friendly technology solutions and continuously learning and developing in this ever-changing field.</p>
 
                 <div className="about_info">
                     <div>
