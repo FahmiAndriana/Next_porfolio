@@ -58,23 +58,7 @@ export default function Navbar() {
                     </ul>
                     <i className="uil uil-times nav_close" id="nav-close"></i>
                 </div>
-                <div className="nav_btns">
-
-                    {/* <!-- theme change button--> */}
-                    <i
-                        className="uil uil-moon change-theme"
-                        id="theme-button"
-                    // @click="change()"
-                    >Siang</i>
-
-
-                    <div className="nav_toggle" id="nav-toggle"
-                    //    @click="open()"
-                    // onClick={open}
-                    >
-                        <i className="uil uil-apps">Malam</i>
-                    </div>
-                </div>
+               
             </nav>
         </header>
 

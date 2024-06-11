@@ -1,129 +1,112 @@
 /* @jsxRuntime classic */
-import React from "react";
+"use client"
+import React, { useState } from "react";
 import Image from "next/image";
 import Calculator from "../public/assets/image/calculator.jpeg";
 import VueFirebase from "../public/assets/image/vue-firebase.png";
-import SellerImg from "../public/assets/image/seller-ecommerce.png";
-import UserImg from "../public/assets/image/user-ecommerce.png";
-import QuranImg from "../public/assets/image/alquran2.png";
+import Ayuayu from "../public/assets/image/ayuayu.png"
 import Coverimg from "../public/assets/image/cover.jpeg";
+import Dimo from "../public/assets/image/dimo.png";
+import Fotohokkie from "../public/assets/image/fotohokkie.png";
+import Foxo from "../public/assets/image/foxo.png";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import { Pagination, Navigation } from 'swiper/modules';
 
 export default function Portfolio() {
+ 
+  const items = [
+    
+    {
+      img: Dimo,
+      title: 'Discovery Montessori',
+      description:
+        "Web and Mobile Apps to help parents with transactions, monitor their children's progress, and make it easier for teachers to evaluate, all in one app.",
+      link: 'https://www.discoverymontessori.id/',
+      google: 'https://play.google.com/store/apps/details?id=com.tanam.dicovery_montessori',
+      appstore: 'https://apps.apple.com/app/discovery-montessori/id6450524311', 
+    },
+    {
+      img: Ayuayu,
+      title: 'Ayu Ayu',
+      description:
+        'A provider of traditionally packaged cakes with a modern twist, offering a unique experience with deeply rooted traditional menus.',
+      link: 'https://ayuayu.tanam.io/',
+    },
+    {
+      img: Fotohokkie,
+      title: 'Fotohokkie',
+      description:
+        "Fotohokkie is a provider of photobox services with multiple branches across Indonesia, utilizing websites and mobile apps to facilitate transactions for users.",
+      link: 'https://www.fotohokkie.id/',
+      google: 'https://play.google.com/store/apps/details?id=com.fotohokkie.tanam&pli=1',
+      appstore: 'https://apps.apple.com/us/app/fotohokkie/id6471645466', 
+  
+    },
+    {
+      img: Foxo,
+      title: 'Foxo Studio',
+      description:
+        "A photo studio service provider capturing every moment across various regions in Indonesia.",
+      link: 'https://foxo.studio',
+    },
+    
+  ];
+
   return (
-    <div>
-      <section className="services section" id="services">
-        <h2 className="section_title">Portfolio</h2>
-        <span className="section_subtitle">My recent project</span>
-        <div className=" section services_container container">
-          <div className="flex m-auto max-w-full overflow-x-scroll scroll-snap-type: x ">
-            {/* Portfolio 3 */}
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2">
-              <div className="services_content">
-                <div className="">
-                  <Image src={Coverimg} alt="Image 2" height={300} />
-                  <h3 class="service_title">Portfolio</h3>
-                  <p>Portfolio personal using Vue and Firevase</p>
-                </div>
+  
+    <div className="portfolio_container w-full flex flex-col items-center justify-center  sm:pl-0 px-4">
+      <h2 className="section_title">Projects</h2>
+                <span className="section_subtitle">My Recent Projects</span>
+
+    <div className="relative  w-full  sm:max-w-lg max-w-xl ">
+    <Swiper
+      spaceBetween={50}
+      slidesPerView={1}
+      Pagination={{ clickable: true }}
+      navigation={true}
+      onSlideChange={() => console.log('slide change')}
+      onSwiper={(swiper) => console.log(swiper)}
+      pagination={{
+        dynamicBullets: true,
+      }}
+      modules={[Pagination]}
+      className="mySwiper"
+    >
+      {items.map((item, index) => (
+        <SwiperSlide key={index}>
+
+          <div className="services_content  sm:h-[320px] h-[450px] m-2 flex sm:flex-row flex-col justify-center items-center">
+            <div className="w-3/4 bg-red4-400 h-full flex items-center justify-center mr-3 my-2">
+              
+              <Image src={item.img} alt={`Image ${index}`} height={200} width={200} />
               </div>
+            <div className="w-full ">
+              <h3 className="service_title text-lg">{item.title}</h3>
+            <p className="text-sm sm:text-sm font-light">{item.description}</p>
+            <div className="flex items-center justify-start  h-fit">
+            {item.google && <a href={item.google} className="text-blue-500  h-fit mr-2" target="_blank" rel="noopener noreferrer">
+                <img src='./google-play.svg' width={70} height={30}  className="h-fit "/>
+                </a>}
+                {item.appstore && <a href={item.appstore} className="text-blue-500 mr-4 h-fit" target="_blank" rel="noopener noreferrer">
+                <img src='./apple.svg' height={56} width={70}/>
+                </a>}
             </div>
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2">
-              <div className="services_content">
-                <div className="">
-                  <Image src={QuranImg} alt="Image 2" height={300} />
-                  <h3 class="service_title">Al Quran Android App</h3>
-                  <p>
-                    Al Quran Android Mobile Apps using Flutter 3, simple to use,
-                    lets read quran!
-                  </p>
-                  <span>View : </span>
-                  <a
-                    href="https://drive.google.com/file/d/1L8wifgyAoP2abD8yjyCBOs7_0oAIcLoD/view?usp=share_link"
-                    class=""
-                  >
-                    <i class="uil uil-import">Download</i>
-                  </a>
-                </div>
+            {item.link && (
+              <div>
+                <span>View Website : </span>
+                <a href={item.link} className="text-blue-500 underline" target="_blank" rel="noopener noreferrer">
+  <i className="uil uil-import"></i> link
+</a>
+
               </div>
-            </div>
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2">
-              <div className="services_content">
-                <div className="">
-                  <Image src={UserImg} alt="Image 2" height={300} />
-                  <h3 class="service_title">User E Commerce</h3>
-                  <p>
-                    Android App Prototype for Multi E-Commerce using Flutter, an
-                    application used by users to search for needed items, place
-                    orders, and make payments. It is still in the development
-                    stage.p
-                  </p>
-                  <span>View : </span>
-                  <a
-                    href="https://drive.google.com/file/d/1rUQ50ATKA_u4obLutX5BusVIIuH-ilvU/view"
-                    class=""
-                  >
-                    <i class="uil uil-import">Download</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2">
-              <div className="services_content">
-                <div className="">
-                  <Image src={SellerImg} alt="Image 2" height={300} />
-                  <h3 class="service_title">Seller E Commerce</h3>
-                  <p>
-                    Android App Prototype for Multi E-Commerce using flutter, an
-                    application used by resellers to sell products, register
-                    items, update inventory, and view sales progress. It is
-                    still in the development stage.{" "}
-                  </p>
-                  <span>View : </span>
-                  <a
-                    href="https://drive.google.com/file/d/1cd18lwHpV7sic6QSdwHiuJdWaVVlbYte/view?usp=share_link"
-                    class=""
-                  >
-                    <i class="uil uil-import">Download</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio 1 */}
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2 justify-center">
-              <div className="services_content">
-                <div className="">
-                  <Image src={Calculator} alt="Image 1" height={300} />
-                  <h3 className="service_title">Calculator</h3>
-                  <p>Calculator using HTML, CSS and JavaScript</p>
-                  <span>View : </span>
-                  <a
-                    href="https://github.com/FahmiAndriana/Calculator.fahmiandriana"
-                    className=""
-                  >
-                    <i className="uil uil-github-alt"> github</i>
-                  </a>
-                </div>
-              </div>
-            </div>
-            {/* Portfolio 2 */}
-            <div className="scroll-snap-align: start flex-shrink-0 w-full m-2">
-              <div className="services_content">
-                <div className="">
-                  <Image src={VueFirebase} alt="Image 2" height={300} />
-                  <h3 className="service_title">Vue Firebase Blog</h3>
-                  <p>Blog using vue 3 and firebase</p>
-                  <span>View : </span>
-                  <a
-                    href="https://github.com/FahmiAndriana/vue-firbase-blog"
-                    className=""
-                  >
-                    <i className="uil uil-github-alt"> github</i>
-                  </a>
-                </div>
-              </div>
-            </div>
+            )}</div>
           </div>
-        </div>
-      </section>
-    </div>
+        </SwiperSlide>
+      ))}
+    </Swiper>
+
+</div>
+</div>
   );
 }

@@ -34,7 +34,7 @@
     "**/*.ts",
     "**/*.tsx",
     ".next/types/**/*.ts"
-, "app/portfolio.js"  ],
+, "app/portfolio.js", "app/components/carousel.js"  ],
   "exclude": [
     "node_modules"
   ]

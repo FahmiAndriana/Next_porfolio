@@ -23,6 +23,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {/* <head>Fahmi Andriana</head> */}
       <body>{children}
         <Navbar />
         <HeroImg />

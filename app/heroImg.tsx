@@ -9,7 +9,7 @@ export default function HeroImg() {
                 <div className="hero-text">
                     <div className="">
                         <h1 className="hero_title" >Fahmi Andriana</h1>
-                        <h3 className="hero_subtitle">Frontend Developer</h3>
+                        <h3 className="hero_subtitle">Fullstack Developer</h3>
                     </div>
                 </div>
             </div>
